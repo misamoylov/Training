@@ -4,7 +4,8 @@ import numpy.random as np
 import sys
 import matplotlib
 
-zones = pd.ExcelFile("D:/Python_Projects/Training/zones.xlsx")
+# zones = pd.ExcelFile("D:/Python_Projects/Training/zones.xlsx")
+zones = pd.ExcelFile('/home/msamoylov/Training/zones.xlsx')
 df = zones.parse('conditions')
 df.head()
 # These are the "Tableau 20" colors as RGB.
@@ -55,3 +56,4 @@ for y in range(10, 91, 10):
 # Remove the tick marks; they are unnecessary with the tick lines we just plotted.
 plt.tick_params(axis="both", which="both", bottom="off", top="off",
                 labelbottom="on", left="off", right="off", labelleft="on")
+plt.savefig("zones.png", bbox_inches="tight")
