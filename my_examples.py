@@ -5,8 +5,10 @@ import sys
 import matplotlib
 
 # zones = pd.ExcelFile("D:/Python_Projects/Training/zones.xlsx")
-zones = pd.ExcelFile('/home/msamoylov/Training/zones.xlsx')
-df = zones.parse('conditions')
+# zones = pd.ExcelFile('/home/msamoylov/Training/zones.xlsx')
+zones = pd.read_csv('/home/msamoylov/Training/heat_ratio.csv', parse_dates=['Date'], index_col='Date')
+
+df = zones.parse('conditions', parse_dates=['Date'], dayfirst=True, index_col='Date')
 df.head()
 # These are the "Tableau 20" colors as RGB.
 tableau20 = [(31, 119, 180), (174, 199, 232), (255, 127, 14), (255, 187, 120),
